@@ -1,0 +1,116 @@
+/* CSS for Detailed Product Section */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container3 {
+    width: 90%;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.boxbig1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.box1, .box2 {
+    flex: 1;
+    margin: 10px;
+}
+
+.box1b img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box2 {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box2 h1 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.box2 p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.box2 ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.box2 ul li {
+    margin: 5px 0;
+    color: #555;
+}
+
+.box2c {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.input1 {
+    padding: 10px;
+    width: 60px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.box2b {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.input2 {
+    background-color: #b42227;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.input2:hover {
+    background-color: #a11e24;
+}
+
+@media (max-width: 768px) {
+    .boxbig1 {
+        flex-direction: column;
+    }
+
+    .box1, .box2 {
+        flex: 1 1 100%;
+        margin: 10px 0;
+    }
+
+    .container3 {
+        width: 100%;
+        padding: 10px;
+    }
+}

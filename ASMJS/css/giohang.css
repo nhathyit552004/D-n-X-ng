@@ -1,0 +1,187 @@
+/* General styles for the cart */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Container styling */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+/* Column styling */
+.column-75, .column-25 {
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Style for the main content column */
+.column-75 {
+    width: 75%;
+}
+
+/* Style for the sidebar column */
+.column-25 {
+    width: 25%;
+}
+
+/* Box styling */
+.box {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+table td img {
+    border-radius: 5px;
+    max-width: 50px;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Button styling */
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Green box styling */
+.box-green {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+    border-radius: 4px;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Input and discount code box styling */
+.group-input {
+    display: flex;
+    flex-direction: column; /* Đổi hướng flex thành dọc */
+    align-items: stretch; /* Đảm bảo các phần tử kéo dài theo chiều rộng */
+    margin-top: 15px;
+}
+
+.group-input input {
+    padding: 5px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    margin-bottom: 10px; /* Tạo khoảng cách giữa input và button */
+}
+
+.group-input button {
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.group-input button:hover {
+    background-color: #218838;
+}
+
+/* Footer styling */
+footer {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    clear: both;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.social-footer {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-footer li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.social-footer a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.social-footer a:hover {
+    color: #ddd;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+    .column-75, .column-25 {
+        width: 100%;
+        float: none;
+        padding: 10px;
+    }
+
+    .group-input {
+        flex-direction: column;
+    }
+
+    .group-input input {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
+    .group-input button {
+        width: 100%;
+    }
+}

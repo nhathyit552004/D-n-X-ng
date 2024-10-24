@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Đăng Ký</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dangky.css">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="img-nav">
+                <a href="index.html"><img src="anh/logo.png" width="80px" height="auto" alt="" /></a>
+            </div>
+            <div class="content-nav">
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="Hamster.html">Hamster</a></li>
+                    <li><a href="thongtin.html">Mô tả</a></li>
+                    <li><a href="chitietsp.html">Chi tiết</a></li>
+                </ul>
+                <form>
+                    <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..." />
+                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+            </div>
+            <a href="giohang.html">
+                <button id="cart">
+                    <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                    Giỏ Hàng
+                </button>
+            </a>
+        </nav>
+    </header>
+
+    <article>
+        <div class="form-container">
+        <h1>Đăng Ký Thành Viên</h1>
+        <div class="form">
+            <!-- Registration form -->
+            <form onsubmit="return KiemTra()">
+                <label for="name">Họ và tên: </label>
+                <input type="text" name="name" id="name">
+                <div id="error1" class="error"></div>
+                <br>
+                <label for="phone">Số điện thoại: </label>
+                <input type="text" name="phone" id="phone">
+                <div id="error2" class="error"></div>
+                <br>
+                <div class="gender-container">
+                    <label for="gender">Giới tính: </label>
+                    <div class="inp">
+                        <input type="radio" name="gender" value="Nam"><span>Nam</span>
+                        <input type="radio" name="gender" value="Nữ"><span>Nữ</span>
+                    </div>
+                    <div id="error3" class="error"></div>
+                </div>
+                
+                <label for="national">Quốc tịch</label>
+                <select name="national" id="national">
+                    <option value="0">Chọn quốc tịch</option>
+                    <option value="1">Việt Nam</option>
+                    <option value="2">Thái Lan</option>
+                    <option value="3">Lào</option>
+                    <option value="4">Trung Quốc</option>
+                    <option value="5">Hàn Quốc</option>
+                </select>
+                <div id="error4" class="error"></div>
+                <label for="note">Ghi chú: </label>
+                <textarea name="note" id="note" cols="46" rows="5" maxlength="200"></textarea>
+                <div id="error5" class="error"></div>
+                <br>
+                <label for="password">Mật khẩu: </label>
+                <input type="password" name="password" id="password">
+                <div id="error6" class="error"></div>
+                <br>
+                <label for="confirmPassword">Xác nhận mật khẩu: </label>
+                <input type="password" name="confirmPassword" id="confirmPassword">
+                <div id="error7" class="error"></div>
+                <br>
+                <input type="submit" value="Đăng ký">
+                <div class="login-link">
+                    Đã có tài khoản? <a href="dangnhap.html">Đăng nhập</a>
+                </div>
+            </form>
+        </div>
+        </div>
+    </article>
+    <footer>
+        <div class="footer-item">
+            <div class="social-footer">
+                <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100051378730853">
+                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                    </a></li>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Structure -->
+<div id="successModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="successMessage" class="success"></p>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('successModal');
+            const closeBtn = document.querySelector('.close');
+            
+            // Function to open the modal
+            function openModal() {
+                modal.style.display = 'flex';
+            }
+
+            // Function to close the modal
+            function closeModal() {
+                modal.style.display = 'none';
+            }
+
+            // Event listener for close button
+            closeBtn.addEventListener('click', closeModal);
+
+            // Event listener for clicking outside the modal content
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // For testing purpose: Open modal after 2 seconds
+            setTimeout(openModal, 2000);
+        });
+</script>
+
+    <script src="js/dangky.js"></script>
+</body>
+</html>

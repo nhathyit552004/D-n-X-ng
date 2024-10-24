@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Giỏ hàng</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/giohang.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="img-nav">
+                <a href="index.html"><img src="anh/logo.png" width="80px" height="auto" alt="Logo"></a>
+            </div>
+            <div class="content-nav">
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="Hamster.html">Hamster</a></li>
+                    <li><a href="thongtin.html">Mô tả</a></li>
+                    <li><a href="chitietsp.html">Chi Tiết</a></li>
+                </ul>
+                <form>
+                    <input type="text" name="search" placeholder="Tìm kiếm sản phẩm...">
+                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+            </div>
+            <a href="giohang.html">
+                <button id="cart">
+                    <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                    Giỏ Hàng
+                </button>
+            </a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="column-75">
+            <div class="box">
+                <table border="0">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Sản phẩm</th>
+                            <th>Số lượng</th>
+                            <th>Giá</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody class="cart-items">
+                        <!-- Cart items will be dynamically inserted here -->
+                    </tbody>
+                </table>
+                <h2 style="text-align: left;">Tổng: <span id="money"></span></h2>
+            </div>
+            <div class="box box-green">
+                Miễn phí vận chuyển trong vòng 1 - 2 tuần
+            </div>
+        </div>
+        <div class="column-25">
+            <div class="box">
+                Mã giảm giá<br>
+                <div class="group-input">
+                    <input type="text" placeholder="Mã giảm giá">
+                    <button>Áp dụng</button>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <footer>
+        <div class="footer-item">
+            <div class="social-footer">
+                <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100051378730853">
+                    <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                </a></li>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/cart.js"></script>
+</body>
+<script>
+       document.addEventListener('DOMContentLoaded', function() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    cart.forEach(item => {
+        console.log(item); // Kiểm tra console để xem giá có được lưu đúng không
+
+        const itemElement = document.createElement('div');
+        itemElement.classList.add('cart-item');
+
+        itemElement.innerHTML = `
+            <img src="${item.image}" alt="${item.name}">
+            <div class="cart-item-details">
+                <h2>${item.name}</h2>
+                <p>Giá: ${item.price}</p>
+                <p>Số lượng: ${item.quantity}</p>
+                <p>Kích thước: ${item.size}</p>
+                <p>Giới tính: ${item.gender}</p>
+            </div>
+        `;
+
+        cartItemsContainer.appendChild(itemElement);
+    });
+});
+
+</script>
+</html>

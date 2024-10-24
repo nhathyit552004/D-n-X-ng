@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Đăng Nhập</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dangnhap.css">
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="img-nav">
+                <a href="index.html"><img src="anh/logo.png" width="80px" height="auto" alt=""/></a>
+            </div>
+            <div class="content-nav">
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="Hamster.html">Hamster</a></li>
+                    <li><a href="thongtin.html">Mô tả</a></li>
+                    <li><a href="chitietsp.html">Chi tiết</a></li>
+                </ul>
+                <form>
+                    <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..." />
+                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+            </div>
+            <a href="giohang.html">
+                <button id="cart">
+                    <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                    Giỏ Hàng
+                </button>
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h1>Đăng Nhập</h1>
+            <div class="form">
+                <form onsubmit="return loginUser()">
+                    <label for="username">Tên đăng nhập: </label>
+                    <input type="text" name="username" id="username">
+                    <div id="loginError1" class="error"></div>
+                    <br>
+                    <label for="password">Mật khẩu: </label>
+                    <input type="password" name="password" id="password">
+                    <div id="loginError2" class="error"></div>
+                    <br>
+                    <input type="submit" value="Đăng nhập">
+                    <div class="register-link">
+                        Chưa có tài khoản? <a href="dangky.html">Đăng ký</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+
+    <footer>
+        <div class="footer-item">
+            <div class="social-footer">
+                <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100051378730853">
+                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                    </a></li>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="js/dangnhap.js"></script>
+</html>

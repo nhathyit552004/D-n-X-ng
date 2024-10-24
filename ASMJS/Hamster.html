@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hamsters</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">   
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .register, .login, .logout {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ffcc00;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+            margin-left: 5px;
+        }
+
+        .register a, .login a, .logout a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .register a:hover, .login a:hover, .logout a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="img-nav">
+                <a href="index.html"><img src="anh/logo.png" width="80px" height="auto" alt=""/></a>
+            </div>
+            <div class="content-nav">
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="Hamster.html">Hamster</a></li>
+                    <li><a href="thongtin.html">Mô tả</a></li>
+                    <li><a href="chitietsp.html">Chi tiết</a></li>
+                </ul>
+                <form>
+                    <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..." />
+                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+            </div>
+            <a href="giohang.html">
+                <button id="cart">
+                    <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                    Giỏ Hàng
+                </button>
+            </a>
+        </nav>
+        <div id="auth-buttons">
+            <!-- Buttons will be dynamically inserted here -->
+        </div>
+    </header>
+
+    <div class="slideshow-container" style="text-align: center;" >
+        <div class="mySlides fade">
+            <img src="anh/anhnen2.jpg" width ="79%">
+        </div>
+        <div class="mySlides fade">
+            <img src="anh/hinhnen3.jpg" width="79%">
+        </div>
+        <div class="mySlides fade">
+            <img src="anh/nen.jpg" width="79%">
+        </div>
+    </div>
+    <br>
+    <div style="text-align:center">
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+    </div>
+
+    <section class="wrapper">
+        <div class="products">
+            <ul class="product-list">
+                <li class="main-product">
+                    <div class="img-product">
+                        <img class="img-prd" src="anh/beargolden (small).jpeg" alt="Hamster Golden" onclick="window.location.href='chitietsp.html?product=hamster-golden'">
+                    </div>
+                    <div class="content-product">
+                        <h3 class="content-product-h3">Hamster golden</h3>
+                        <div class="content-product-deltals">
+                            <div class="price">
+                                <span class="money">250.000đ</span>
+                            </div>
+                            <a href="giohang.html">
+                                <button type="button" class="btn btn-cart"
+                                    data-id="hamster-golden" 
+                                    data-name="Hamster golden" 
+                                    data-price="250000" 
+                                    data-image="anh/beargolden (small).jpeg">
+                                    Thêm Vào Giỏ
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="main-product">
+                    <div class="img-product">
+                        <img class="img-prd" src="anh/bearlongxu (small).jpeg" alt="Hamster Long Xù" onclick="window.location.href='chitietsp.html?product=hamster-long-xu'">
+                    </div>
+                    <div class="content-product">
+                        <h3 class="content-product-h3">Hamster long xù</h3>
+                        <div class="content-product-deltals">
+                            <div class="price">
+                                <span class="money">129.000đ</span>
+                            </div>
+                            <a href="giohang.html">
+                                <button type="button" class="btn btn-cart"
+                                    data-id="hamster-long-xu" 
+                                    data-name="Hamster long xù" 
+                                    data-price="129000" 
+                                    data-image="anh/bearlongxu (small).jpeg">
+                                    Thêm Vào Giỏ
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="main-product">
+                    <div class="img-product">
+                        <img class="img-prd" src="anh/bearpanda (small).jpeg" alt="Hamster Panda" onclick="window.location.href='chitietsp.html?product=hamster-panda'">
+                    </div>
+                    <div class="content-product">
+                        <h3 class="content-product-h3">Hamster panda</h3>
+                        <div class="content-product-deltals">
+                            <div class="price">
+                                <span class="money">159.000đ</span>
+                            </div>
+                            <a href="giohang.html">
+                                <button type="button" class="btn btn-cart"
+                                    data-id="hamster-panda" 
+                                    data-name="Hamster panda" 
+                                    data-price="159000" 
+                                    data-image="anh/bearpanda (small).jpeg">
+                                    Thêm Vào Giỏ
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="main-product no-margin">
+                    <div class="img-product">
+                        <img class="img-prd" src="anh/beartamthe (small).jpeg" alt="Hamster Tam Thể" onclick="window.location.href='chitietsp.html?product=hamster-tam-the'">
+                    </div>
+                    <div class="content-product">
+                        <h3 class="content-product-h3">Hamster bear tam thể</h3>
+                        <div class="content-product-deltals">
+                            <div class="price">
+                                <span class="money">89.000đ</span>
+                            </div>
+                            <a href="giohang.html">
+                                <button type="button" class="btn btn-cart"
+                                    data-id="hamster-tam-the" 
+                                    data-name="Hamster bear tam thể" 
+                                    data-price="89000" 
+                                    data-image="anh/beartamthe (small).jpeg">
+                                    Thêm Vào Giỏ
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="main-product">
+                    <div class="img-product">
+                        <img class="img-prd" src="anh/bearvienlongtrang (small).jpeg" alt="Hamster Bear Viền Lông Trắng" onclick="window.location.href='chitietsp.html?product=hamster-vien-long-trang'">
+                    </div>
+                    <div class="content-product">
+                        <h3 class="content-product-h3">Hamster bear viền lông trắng</h3>
+                        <div class="content-product-deltals">
+                            <div class="price">
+                                <span class="money">219.000đ</span>
+                            </div>
+                            <a href="giohang.html">
+                                <button type="button" class="btn btn-cart"
+                                    data-id="hamster-vien-long-trang" 
+                                    data-name="Hamster bear viền lông trắng" 
+                                    data-price="219000" 
+                                    data-image="anh/bearvienlongtrang (small).jpeg">
+                                    Thêm Vào Giỏ
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="main-product">
+                    <div class="img-product">
+                        <img class="img-prd" src="anh/hamsterbearfullkem (small).jpeg" alt="Hamster Bear Full Kem" onclick="window.location.href='chitietsp.html?product=hamster-full-kem'">
+                    </div>
+                    <div class="content-product">
+                        <h3 class="content-product-h3">Hamster bear full kem</h3>
+                        <div class="content-product-deltals">
+                            <div class="price">
+                                <span class="money">115.000đ</span>
+                            </div>
+                            <a href="giohang.html">
+                                <button type="button" class="btn btn-cart"
+                                    data-id="hamster-full-kem" 
+                                    data-name="Hamster bear full kem" 
+                                    data-price="115000" 
+                                    data-image="anh/hamsterbearfullkem (small).jpeg">
+                                    Thêm Vào Giỏ
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="main-product no-margin">
+                    <div class="img-product">
+                        <img class="img-prd" src="anh/hamsterbearkhoangkem (small).jpeg" alt="Hamster Bear Khoang Kem" onclick="window.location.href='chitietsp.html?product=hamster-khoang-kem'">
+                    </div>
+                    <div class="content-product">
+                        <h3 class="content-product-h3">Hamster Bear Khoang Kem</h3>
+                        <div class="content-product-deltals">
+                            <div class="price">
+                                <span class="money">85.000đ</span>
+                            </div>
+                            <a href="giohang.html">
+                                <button type="button" class="btn btn-cart"
+                                    data-id="hamster-khoang-kem" 
+                                    data-name="Hamster Bear khoang kem" 
+                                    data-price="85000" 
+                                    data-image="anh/hamsterbearkhoangkem (small).jpeg">
+                                    Thêm Vào Giỏ
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-item">
+            <div class="social-footer">
+                <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100051378730853">
+                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                    </a></li>
+            </div>
+        </div>
+    </footer>
+    <script src="js/cart.js"></script>
+</body>
+</html>

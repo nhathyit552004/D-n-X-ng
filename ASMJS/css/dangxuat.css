@@ -1,0 +1,27 @@
+.register {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: flex; /* Align items horizontally */
+        background-color: transparent; /* Transparent background */
+        font-family: Arial, sans-serif;
+    }
+
+    .register a, #logoutButton {
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+        font-size: 16px;
+        margin-left: 10px; /* Space between links */
+        transition: color 0.3s ease;
+        background-color: #ffcc00;
+        padding: 10px 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border: none;
+        cursor: pointer;
+    }
+
+    .register a:hover, #logoutButton:hover {
+        color: #fff;
+    }

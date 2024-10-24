@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["dom", "es6"]
+  },
+  "include": [
+    "**/*.ts"  // Bao gồm tất cả các file .ts trong toàn bộ dự án
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

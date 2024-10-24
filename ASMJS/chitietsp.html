@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chi Tiết Sản Phẩm</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="css/chitietsanpham.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* CSS để chỉnh sửa layout */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .box2c {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .box2c label {
+            margin-right: 10px;
+        }
+        .box2b {
+            display: flex;
+            gap: 10px;
+        }
+        .input2 {
+            background-color: #ffcc00;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .input2:hover {
+            background-color: #e6b800;
+        }
+        .checkbox-container {
+            margin-top: 10px;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="img-nav">
+                <a href="index.html"><img src="anh/logo.png" width="80px" height="auto" alt="" /></a>
+            </div>
+            <div class="content-nav">
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="Hamster.html">Hamster</a></li>
+                    <li><a href="thongtin.html">Mô tả</a></li>
+                    <li><a href="chitietsp.html">Chi Tiết</a></li>
+                </ul>
+                <form>
+                    <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..." />
+                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+            </div>
+            <a href="giohang.html">
+                <button id="cart">
+                    <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                    Giỏ Hàng
+                </button>
+            </a>
+        </nav>
+    </header>
+
+    <section class="product-details">
+        <div class="container3">
+            <div class="boxbig1">
+                <div class="box1">
+                    <div class="box1b">
+                        <img class="product-image" src="" alt="Product Image">
+                    </div>
+                </div>
+                <div class="box2">
+                    <h1 class="product-name" style="color: gray; font-size: 30px;"></h1>
+                    <p style="border-bottom: 5px solid; width: 50px; color: gray;"></p>
+                    <h1 class="product-price" style="font-size: 28px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"></h1>
+                    <p class="product-description" style="font-size: 25px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"></p>
+                    <ul>
+                        <li>
+                            Size:
+                            <label><input type="radio" name="size" value="small"> Nhỏ</label>
+                            <label><input type="radio" name="size" value="large"> Lớn</label>
+                            <div id="size-error" class="error-message"></div> <!-- Thêm thông báo lỗi kích thước -->
+                        </li>
+                        <li>
+                            Giới tính:
+                            <label><input type="radio" name="gender" value="male"> Đực</label>
+                            <label><input type="radio" name="gender" value="female"> Cái</label>
+                            <div id="gender-error" class="error-message"></div> <!-- Thêm thông báo lỗi giới tính -->
+                        </li>
+                        <li>Tuổi: 2 tháng</li>
+                        <li>Màu: Vàng</li>
+                    </ul>
+                    <div class="box2c">
+                        <label for="quantity">Số lượng:</label>
+                        <input type="number" id="quantity" min="1" max="10" class="input1" value="1" style="text-align: center; font-size: 18px;">
+                    </div>
+                    <h1 style="font-size: 30px; text-align: center;">
+                        <del class="original-price"></del> 
+                        <ins class="discounted-price"></ins>
+                    </h1>
+                    <div class="checkbox-container">
+                        <label for="purchase"><input type="checkbox" name="purchase" id="purchase"> Đồng ý mua hàng</label>
+                    </div>
+                    
+                    <div class="box2b">
+                        <input type="button" value="THÊM VÀO GIỎ HÀNG" class="input2" id="add-to-cart-button">
+                        <input type="button" value="MUA NGAY" class="input2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Lấy tham số từ URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('product');
+
+        // Sử dụng productId để tải thông tin chi tiết sản phẩm
+        function loadProductDetails(id) {
+            // Tạo một đối tượng sản phẩm giả định hoặc tải từ cơ sở dữ liệu
+            const products = {
+                'hamster-golden': {
+                    name: 'Hamster Golden',
+                    price: '250,000₫',
+                    description: 'Hamster Golden nổi tiếng với bộ lông vàng đẹp mắt và tính cách thân thiện. Nó là một thú cưng tuyệt vời cho cả trẻ em và người lớn.',
+                    image: 'anh/beargolden (small).jpeg',
+                    originalPrice: '250,000₫',
+                    discountedPrice: '200,000₫'
+                },
+                'hamster-long-xu': {
+                    name: 'Hamster Long Xù',
+                    price: '129,000₫',
+                    description: 'Hamster Long Xù nổi tiếng với bộ lông dài và mềm mại.',
+                    image: 'anh/bearlongxu (small).jpeg',
+                    originalPrice: '129,000₫',
+                    discountedPrice: '89,000₫'
+                },
+                'hamster-panda': {
+                    name: 'Hamster Panda',
+                    price: '159,000₫',
+                    description: 'Hamster Panda nổi bật với bộ lông dài và màu sắc tương phản rõ rệt, tạo nên vẻ ngoài đáng yêu và nổi bật.',
+                    image: 'anh/bearpanda (small).jpeg',
+                    originalPrice: '159,000₫',
+                    discountedPrice: '109,000₫'
+                },
+                'hamster-tam-the': {
+                    name: 'Hamster Bear Tam Thể',
+                    price: '89,000₫',
+                    description: 'Hamster Tam Thể nổi tiếng với bộ lông đa màu sắc.',
+                    image: 'anh/beartamthe (small).jpeg',
+                    originalPrice: '89,000₫',
+                    discountedPrice: '59,000₫'
+                },
+                'hamster-vien-long-trang': {
+                    name: 'Hamster Bear Viền Lông Trắng',
+                    price: '219,000₫',
+                    description: 'Hamster Viền Lông Trắng nổi bật với bộ lông trắng sáng.',
+                    image: 'anh/bearvienlongtrang (small).jpeg',
+                    originalPrice: '219,000₫',
+                    discountedPrice: '179,000₫'
+                },
+                'hamster-full-kem': {
+                    name: 'Hamster Bear Full Kem',
+                    price: '115,000₫',
+                    description: 'Hamster Full Kem có bộ lông đẹp và đặc biệt.',
+                    image: 'anh/hamsterbearfullkem (small).jpeg',
+                    originalPrice: '115,000₫',
+                    discountedPrice: '85,000₫'
+                },
+                'hamster-khoang-kem': {
+                    name: 'Hamster Bear Khoang Kem',
+                    price: '85,000₫',
+                    description: 'Hamster Khoang Kem nổi bật với bộ lông màu kem.',
+                    image: 'anh/hamsterbearkhoangkem (small).jpeg',
+                    originalPrice: '85,000₫',
+                    discountedPrice: '55,000₫'
+                }
+            };
+
+            const product = products[id];
+            if (product) {
+                document.querySelector('.product-name').textContent = product.name;
+                document.querySelector('.product-price').textContent = product.price;
+                document.querySelector('.product-description').textContent = product.description;
+                document.querySelector('.product-image').src = product.image;
+                document.querySelector('.original-price').textContent = product.originalPrice;
+                document.querySelector('.discounted-price').textContent = product.discountedPrice;
+            } else {
+                console.error('Sản phẩm không tìm thấy.');
+            }
+        }
+
+        loadProductDetails(productId);
+    </script>
+    <script>
+        document.getElementById('add-to-cart-button').addEventListener('click', function() {
+            const sizeSelected = document.querySelector('input[name="size"]:checked');
+            const genderSelected = document.querySelector('input[name="gender"]:checked');
+            
+            // Xóa các thông báo lỗi cũ
+            document.getElementById('size-error').textContent = '';
+            document.getElementById('gender-error').textContent = '';
+
+            let hasError = false;
+
+            if (!sizeSelected) {
+                document.getElementById('size-error').textContent = 'Vui lòng chọn kích thước.';
+                hasError = true;
+            }
+
+            if (!genderSelected) {
+                document.getElementById('gender-error').textContent = 'Vui lòng chọn giới tính.';
+                hasError = true;
+            }
+
+            if (hasError) {
+                return; // Không thực hiện thêm vào giỏ hàng nếu có lỗi
+            }
+
+            // Lấy thông tin sản phẩm từ các phần tử HTML
+            const name = document.querySelector('.product-name').textContent;
+            const quantity = document.querySelector('#quantity').value;
+            const size = sizeSelected.value;
+            const gender = genderSelected.value;
+            const priceElement = document.querySelector('.discounted-price'); // Thay đổi
+            const priceText = priceElement ? priceElement.textContent : '0₫'; // Kiểm tra nếu phần tử tồn tại
+            const price = parseInt(priceText.replace(/[^\d]/g, ''), 10); // Chỉ lấy phần số từ chuỗi
+
+            const image = document.querySelector('.product-image').src;
+
+            const product = {
+                name: name,
+                quantity: quantity,
+                size: size,
+                gender: gender,
+                price: price,
+                image: image
+            };
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            window.location.href = 'giohang.html';
+        });
+
+    </script>
+</body>
+</html>
